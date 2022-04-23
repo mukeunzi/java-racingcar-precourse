@@ -2,11 +2,11 @@
 
 ## 코드 구현 전 확인사항 & 체크리스트
 
-- [ ] 1주차 과제 공통 피드백을 확인하고 정리한다.
-- [ ] 일급컬렉션과, 모든 원시값과 문자열을 포장하는 방법에 대해 학습한다.
+- [X] 1주차 과제 공통 피드백을 확인하고 정리한다. → [피드백 노트 📝](./feedback-note.md)
+- [X] 일급컬렉션과, 모든 원시값과 문자열을 포장하는 방법에 대해 학습한다. → [일급컬렉션(First Class Collection)이란?](./what-is-mean-first-class-collection.md), [모든 원시값과 문자열을 포장한다는 의미란?](./what-is-mean-wrapping-variable.md) 
 - [ ] Java에서 입력 값이 유효하지 않을 경우 사용할 수 있는 Exception에 대해 찾아본다.
 - [ ] MVC 구조로 클래스 설계하기
-- [ ] 미션 정정 안내 메일에 따라, ApplicationTest.java의 문구를 수정한다. 
+- [X] 미션 정정 안내 메일에 따라, ApplicationTest.java의 문구를 수정한다. 
 
 ## 구현 기능 체크리스트
 
