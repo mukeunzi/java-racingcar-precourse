@@ -11,20 +11,20 @@ public class CarGroup {
     private final List<Car> carGroup;
 
     public CarGroup(List<Car> carGroup) {
-        validUnique();
+        validUnique(carGroup);
         this.carGroup = carGroup;
     }
 
-    private void validUnique() {
-        HashSet<String> carNames = new HashSet<>(getCarNames());
-        if (this.carGroup.size() == carNames.size()) {
+    private void validUnique(List<Car> carGroup) {
+        HashSet<String> carNames = new HashSet<>(getCarNames(carGroup));
+        if (carGroup.size() == carNames.size()) {
             return;
         }
 
         throw new InvalidParameterError(ErrorMessage.CAR_NAME_DUPLICATED_ERROR);
     }
 
-    private List<String> getCarNames() {
+    private List<String> getCarNames(List<Car> carGroup) {
         List<String> carNames = new ArrayList<>();
         for (Car car : carGroup) {
             carNames.add(car.getName());
