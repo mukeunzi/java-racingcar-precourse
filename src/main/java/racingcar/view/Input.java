@@ -7,4 +7,9 @@ public class Input {
         Print.printCarNameMessage();
         return Console.readLine();
     }
+
+    public static String inputRound() {
+        Print.printRoundMessage();
+        return Console.readLine();
+    }
 }
