@@ -3,6 +3,7 @@ package racingcar.view;
 import racingcar.domain.Car;
 import racingcar.message.GameMessage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -52,5 +53,24 @@ public class Print {
             System.out.print("-");
         }
         System.out.println();
+    }
+
+    public static void printWinner() {
+        System.out.println(String.format("최종 우승자: %s", getWinnerNames()));
+    }
+
+    public static String getWinnerNames() {
+        List<String> winnerNames = new ArrayList<>();
+        for (String carName : racingGameResult.keySet()) {
+            if (isWinner(racingGameResult.get(carName))) {
+                winnerNames.add(carName);
+            }
+        }
+
+        return String.join(",", winnerNames);
+    }
+
+    public static boolean isWinner(int distance) {
+        return distance >= winnerDistance;
     }
 }
