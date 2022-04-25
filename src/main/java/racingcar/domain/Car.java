@@ -9,11 +9,20 @@ public class Car {
         this.distance = 0;
     }
 
+    public Car(CarName name, int distance) {
+        this.name = name;
+        this.distance = distance;
+    }
+
     public String getName() {
         return name.getCarName();
     }
 
     public int getDistance() {
         return distance;
+    }
+
+    public Car increaseDistance() {
+        return new Car(name, distance + 1);
     }
 }

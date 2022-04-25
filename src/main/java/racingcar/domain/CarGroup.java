@@ -31,4 +31,28 @@ public class CarGroup {
         }
         return carNames;
     }
+
+    public List<List<Car>> playGame(int round) {
+        List<List<Car>> resultByRound = new ArrayList<>();
+        for (int i = 0; i < round; i++) {
+            resultByRound.add(raceCars());
+        }
+        return resultByRound;
+    }
+
+    private List<Car> raceCars() {
+        List<Car> oneRoundResult = new ArrayList<>();
+        for (int i = 0; i < carGroup.size(); i++) {
+            Car car = carGroup.get(i);
+            oneRoundResult.add(moveForward(car));
+        }
+        return oneRoundResult;
+    }
+
+    private Car moveForward(Car car) {
+        if (GameRule.isForward()) {
+            return car.increaseDistance();
+        }
+        return car;
+    }
 }
