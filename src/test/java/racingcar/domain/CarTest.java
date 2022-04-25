@@ -14,4 +14,11 @@ public class CarTest {
         assertThat(car.getName()).isEqualTo("eunji");
         assertThat(car.getDistance()).isEqualTo(0);
     }
+
+    @Test
+    @DisplayName("distance가 1로 증가되면 통과")
+    public void checkIncreaseDistance() {
+        Car car = new Car(new CarName("eunji")).increaseDistance();
+        assertThat(car.getDistance()).isEqualTo(1);
+    }
 }
