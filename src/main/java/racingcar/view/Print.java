@@ -10,6 +10,7 @@ import java.util.List;
 public class Print {
     private static HashMap<String, Integer> racingGameResult = new HashMap<>();
     private static int winnerDistance = 0;
+    private static List<String> winnerNames = new ArrayList<>();
 
     public static void printCarNameMessage() {
         System.out.println(GameMessage.INPUT_CAR_NAME_MESSAGE);
@@ -56,18 +57,20 @@ public class Print {
     }
 
     public static void printWinner() {
-        System.out.println(String.format("%s %s", GameMessage.FINAL_WINNER_PREFIX_MESSAGE, getWinnerNames()));
+        System.out.println(String.format("%s %s", GameMessage.FINAL_WINNER_PREFIX_MESSAGE, getFinalWinners()));
     }
 
-    public static String getWinnerNames() {
-        List<String> winnerNames = new ArrayList<>();
+    public static String getFinalWinners() {
         for (String carName : racingGameResult.keySet()) {
-            if (isWinner(racingGameResult.get(carName))) {
-                winnerNames.add(carName);
-            }
+            addFinalWinner(carName);
         }
-
         return String.join(",", winnerNames);
+    }
+
+    private static void addFinalWinner(String carName) {
+        if (isWinner(racingGameResult.get(carName))) {
+            winnerNames.add(carName);
+        }
     }
 
     public static boolean isWinner(int distance) {
