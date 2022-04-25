@@ -28,7 +28,6 @@ public class CarNameTest {
         }).isInstanceOf(InvalidParameterError.class).hasMessageContaining("[ERROR] 자동차 이름은 1~5글자만 입력할 수 있습니다.");
     }
 
-
     @Test
     @DisplayName("carName에 알파벳+숫자 외 다른 문자가 입력되었을 경우 오류 발생")
     public void checkCarNameFormat() {
