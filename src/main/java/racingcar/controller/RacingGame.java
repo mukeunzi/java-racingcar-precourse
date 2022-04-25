@@ -22,6 +22,7 @@ public class RacingGame {
 
     private void startGame() {
         List<List<Car>> resultByRound = carGroup.playGame(round.getRound());
+        System.out.println();
         Print.printResultByRound(resultByRound);
         Print.printWinner();
     }

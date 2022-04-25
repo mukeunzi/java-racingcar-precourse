@@ -12,15 +12,15 @@ public class Print {
     private static int winnerDistance = 0;
 
     public static void printCarNameMessage() {
-        System.out.println(GameMessage.inputCarNameMessage);
+        System.out.println(GameMessage.INPUT_CAR_NAME_MESSAGE);
     }
 
     public static void printRoundMessage() {
-        System.out.println(GameMessage.inputRoundMessage);
+        System.out.println(GameMessage.INPUT_ROUND_MESSAGE);
     }
 
     public static void printResultByRound(List<List<Car>> resultByRound) {
-        System.out.println("\n실행 결과");
+        System.out.println(String.format("%s", GameMessage.RESULT_MESSAGE));
         for (int i = 0; i < resultByRound.size(); i++) {
             printOneRound(resultByRound.get(i));
         }
@@ -56,7 +56,7 @@ public class Print {
     }
 
     public static void printWinner() {
-        System.out.println(String.format("최종 우승자: %s", getWinnerNames()));
+        System.out.println(String.format("%s %s", GameMessage.FINAL_WINNER_PREFIX_MESSAGE, getWinnerNames()));
     }
 
     public static String getWinnerNames() {
